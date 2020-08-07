@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body{
+    width: 100%;
+    height: 100%;
+    margin:0;
+}
+
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border:0;
+  overflow: hidden;
+  background-color: #804000;
+  line-height:60px;
+  font-weight: bold; /* bold font for nav bar*/
+  width:100%;
+  z-index:2;
+  box-shadow:0px 6px 5px rgba(0,0,0,0.45);
+}
+
+li {
+  list-style-type:none;
+  float: right;
+}
+
+li a {
+  display: block;
+  color:#FFF4E1;
+  text-align: center;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #FFC864; /*hover makes text yellow */
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFC864;
+  min-width: 145px;
+  min-height: 145px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 7px;
+  z-index:3;
+}
+
+.dropdown-content a {
+  color:#804000; /* brown text*/
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align:left;
+}
+
+.dropdown-content a:hover {
+    color:#804000; /* diff from hover to yellow*/
+    font-size:x-large;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.brown-circle{
+    position:absolute;
+    left:70px;
+    background-color:#804000;
+    height:160px;
+    width:160px;
+    border-radius:50%;
+    box-shadow:5px 8px 8px rgba(0,0,0,0.7);
+    z-index:1;
+}
+.logo {
+   display: inline-block;
+   position:absolute;
+   left: 52px;
+   top:15px;
+   z-index: 2;
+}
+
+.navbar{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*scroll indicator*/
+
+
+.heading{
+    display: block;
+    background-image: url(https://2020.igem.org/wiki/images/a/ab/T--Fudan--title_background_template.svg);
+    background-repeat: no-repeat;   
+    background-size: cover;
+    /*background-position: -20px -10px;*/
+    text-align: center;
+    padding:0;
+    margin:0;
+    border:0;
+}
+
+.headercontent{
+    position: absolute;
+    padding-top: 20px;
+    padding-left:540px;
+    font-family : GermaniaOne Regular;
+    font-size : 60px;
+    color : #FFF4E1;
+    color : rgb(255, 244, 225);
+}
+
+.project {
+    background-size: cover;
+    background-color:#DCF0F0; /* light blue */
+    box-sizing: border-box;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.envelope {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color:#DCF0F0;
+    width: 100%;
+    padding: 0;
+    margin-bottom: -6.5px;
+    border: 0;
+}
+
+.signature{
+    position: absolute;
+    left: 450px;
+    top: 150px;
+  font-family : Pristina;
+  font-size : 45px;
+  color : #FFF4E1;
+  text-outline : #FFF4E1;
+
+}
+
+.footer{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: #402000;
+}
+.labels{
+    padding-top:1%;
+    padding-left:2%;
+    display:inline-block;
+    width:70%;
+}
+.section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,1fr);
+	grid-column-gap: 8%;
+    grid-row-gap: 5%;
+}
+
+.label:hover.label{  
+    transition: background-color 300ms ease-in-out;
+    background: #FFF4E1;
+}
+
+.label{
+    display:inline-block;
+    background: #FFC864;
+	border-style: solid;
+	border-radius: 30px;
+    padding:5%;	
+    text-align: center;
+    box-shadow:black 8px 8px 5px;
+    font-weight: bold;
+    color: #402000;
+    text-decoration: none;
+}
+
+.page{
+    text-align:center;
+}
+.page:hover{
+    color:#FFC864;
+    transition: color 200ms ease-in-out;
+}
+.sponsor{
+    margin-right:11%;
+    display: inline-block;
+    font-family : Pristina;
+    font-size : 40px;
+    color : #FFF4E1;
+    float:right;
+}
+
+.sponsortext{
+    line-height:3px;
+}
+
+.contact-wrap{
+    display:inline-block;
+    max-width:20%;
+    max-height:10%;
+    float:right;
+    margin-right:2%;
+}
+.contact{
+    display: inline-flex;
+    margin-top: 20px;
+    text-align: left;
+}
+.contact-info{
+    display:grid;
+    grid-template-rows: repeat(4,1fr); /*4 rows of info*/
+    padding-left: 20px;
+    max-height:200px;
+    margin:0px;
+}
+
+.contact-info p,a{
+    color: #FFF4E1;
+    margin:0px;
+    font-weight:bold;
+    font-size:large;
+}
+
+.socials{
+    display: grid;
+    grid-template-columns: repeat(17,1fr);
+    background-color:#402000;
+}
+
+.twitter{
+    background-color:#402000 ;
+    display: inline-block;
+    size:50%
+}
+
+
+.twitter:hover{
+    opacity:0.7;
+}
+.ig{
+    background-color:#402000 ;
+    display: inline-block;
+    height:50%;
+}
+.ig:hover{
+    opacity:0.7;
+}
+.weibo{
+    background-color:#402000 ;
+    display:inline-block;
+    height:50%;
+}
+.weibo:hover{
+    opacity:0.7;
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+<ul class="nav">
+    <div class="brown-circle">
+    </div>
+    <div class="logo"> 
+        <a href="#"><img src="https://2020.igem.org/wiki/images/0/0e/T--Fudan--logo_2.svg" alt="logo" width=85%></a>
+    </div>
+  <li><a href="#about">About</a></li>
+  <li><a href="#Team">Team</a></li>
+  <li><a href="#Awards">Awards</a></li>
+  <li><a href="#Modelling">Modelling</a></li>
+  <li><a href="#HumanPractices">HP</a></li>
+  <li class="dropdown">
+    <a href="https://2020.igem.org/wiki/images/0/0e/T--Fudan--logo_2.svg" class="dropbtn">Experiments</a>
+    <div class="dropdown-content">
+    <a href="#">Overview</a>
+    <a href="#">Results</a>
+    <a href="#">Notebook</a>
+    </div>
+</li>
+  <li><a href="#Project">Project</a></li>
+  <li><a class="active" href="#home">Home</a></li>
+  
+</ul>
+</div>
+<div class="heading">
+    <br></br>
+    <br></br>
+    <h1 class="headercontent">Project</h1>
+    <img src="https://2020.igem.org/wiki/images/f/fc/T--Fudan--title_template.svg" alt="title" width=30%>
+    <br></br>
+    <br></br>
+</div>
+<div class="project">
+    
+    <h2><strong>Description</strong></h2>
+    <p1>Very early on, we each came up with an idea for our iGEM project and presented it to the group. You can see some of these on our Initial Ideas page.</p1>
+    <br><br>
+    <p1>We carried out a public survey in the UK, where more than half of the 200 surveyed wanted a synthetic biology solution for disease diagnosis. You can read more about our surveys on our Silver Human Practices page.
+    </p1>
+    <br><br>
+    <p1>We identified a gap in the field of rapid, point-of-care diagnostics which arises when antibody-based technologies cannot be used, for example diagnosis of diseases in infants or immunocompromised patients. 
+    </p1>
+    <h2><strong>Design</strong></h2>
+    <p1>As a result, we decided to use the flexibility and versatility of synthetic biology to design
+        a platform technology which addresses these issues.
+    </p1>
+    <br><br>
+    <p1>Lorem Ipsum</p1><br>
+    <p1>Lorem Ipsum</p1><br>
+    <p1>Lorem Ipsum</p1><br>
+    <p1>Lorem Ipsum</p1><br>
+    <p1>Lorem Ipsum</p1><br>
+</div>
+<div class="envelope">
+    
+    <img src="https://2020.igem.org/wiki/images/1/1f/T--Fudan--sealed_logo_no_shadow.svg" alt="envelope">
+    <p class="signature"> Signature:Harry Potter</p>
+</div>
+<div class="footer">
+    <div class="labels">
+    <div class="section">
+        <a href="#" class="label">Home</a>
+        <a href="#" class="label">Project</a>
+        <a href="#" class="label">Experiment</a>
+        <a href="#" class="label">HP</a>
+        <p></p>
+        <a href="#" class="page">Description</a>
+        <a href="#" class="page">Notebook</a>
+        <a href="#" class="page">iHP</a>
+        <p></p>
+        <a href="#" class="page">Design</a>
+        <a href="#" class="page">Results</a>
+        <a href="#" class="page">Education</a>
+        <p></p>
+        <a href="#" class="page">Safety</a>
+        <p></p>
+        <a href="#" class="page">Collaboration</a>
+        <p></p>
+        <a href="#" class="page">Demonstrate</a>
+    </div>
+    </div>
+    <div class="sponsor">
+        <div class="sponsortext">
+            <p>Sponsor:</p>
+            <a href="http://www.yfc.cn/"><img src="https://2020.igem.org/wiki/images/b/ba/T--Fudan--YFcapital.svg" alt="YF fund"></a>
+        </div> 
+    </div> 
+    <div class="labels">
+    <div class="section">
+        <a href="#" class="label">Home</a>
+        <a href="#" class="label">Project</a>
+        <a href="#" class="label">Experiment</a>
+        <a href="#" class="label">HP</a>
+        <p></p>
+        <a href="#" class="page">Description</a>
+        <a href="#" class="page">Notebook</a>
+        <a href="#" class="page">iHP</a>
+        <p></p>
+        <a href="#" class="page">Design</a>
+        <a href="#" class="page">Results</a>
+        <a href="#" class="page">Education</a>
+        <p></p>
+        <a href="#" class="page">Safety</a>
+        <p></p>
+        <a href="#" class="page">Collaboration</a>
+        <p></p>
+        <a href="#" class="page">Demonstrate</a>
+    </div>
+</div>
+<div class="contact-wrap">
+<div class="contact">
+    <img src="https://2020.igem.org/wiki/images/7/71/T--Fudan--vdivider_yellow.svg" alt="divider">
+    <div class="contact-info">
+        <p style="font-size:40px;font-family:Pristina;">Contact:</p>
+        <p>Location: 2005 Songhu Road, Shanghai, China</p>
+        <a href="mailto:igem@fudan.edu.cn">Email: igem@fudan.edu.cn</a>
+        <p>Phone: +86 21 31246500</p>
+        </div>
+</div>
+</div>
+<img src="https://2020.igem.org/wiki/images/2/20/T--Fudan--socials_divider.svg" alt="divider" style="background-color:#402000;margin:0;border:0;">
+<div class="socials">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="twitter">
+    <a href="https://twitter.com/fudan_igem" class="bottom-twitter"><img src="https://2020.igem.org/wiki/images/2/24/T--Fudan--twitter_logo_yellow.svg" alt="twitter"></a>
+    </div>
+<div class="ig">
+    <a href="https://instagram.com/igem_fudan2020"><img src="https://2020.igem.org/wiki/images/3/30/T--Fudan--ig_logo_yellow.svg" alt="instagram"></a>
+</div>
+<div class="weibo">
+    <a href="https://weibo.com/u/6299186826"><img src="https://2020.igem.org/wiki/images/c/ca/T--Fudan--weibo_logo_yellow.svg" alt="weibo"></a>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</body>
+</html>
